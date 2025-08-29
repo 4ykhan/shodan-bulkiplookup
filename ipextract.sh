@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage: ./extract_ips.sh -f input.txt
+# usage: ./extract_ips.sh -f input.txt
 
 while getopts "f:" opt; do
   case $opt in
@@ -17,7 +17,7 @@ fi
 
 output_file="ip_list.txt"
 
-# Extract unique IPv4 addresses
+# extract unique IPv4 addresses
 grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b' "$input_file" | sort -u > "$output_file"
 
 echo "Unique IPs saved to $output_file"
